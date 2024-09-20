@@ -4,7 +4,7 @@ import { Head } from '@inertiajs/react';
 export default function Dashboard() {
     return (
         <AuthenticatedLayout
-            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
+            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Admin Dashboard</h2>}
         >
             <Head title="Dashboard" />
 
@@ -14,6 +14,10 @@ export default function Dashboard() {
                         <div className="p-6 text-gray-900">You're gg my nigga in!</div>
                     </div>
                 </div>
+            </div>
+
+            <div>
+                
             </div>
         </AuthenticatedLayout>
     );
