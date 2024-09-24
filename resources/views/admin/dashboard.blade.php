@@ -1,1 +1,3 @@
-<h1>Admin</h1>
+@extends('layouts.admin')
+@section('çontent')
+@endsection
