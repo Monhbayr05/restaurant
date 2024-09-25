@@ -26,11 +26,19 @@
         rel="stylesheet">
 </head>
 <body>
-{{--navbar--}}
-    @include('layouts.inc.admin.header')
-{{--sidebar    --}}
-    @include('layouts.inc.admin.sidebar')
-    @yield('content')
+    <div class="layouts">
+        @include('layouts.inc.admin.sidebar')
+
+        <div class="d-flex flex-column w-100">
+            @include('layouts.inc.admin.header')
+
+            @yield('content')
+
+            @include('layouts.inc.admin.footer')
+        </div>
+
+    </div>
+
 
 </body>
 </html>
