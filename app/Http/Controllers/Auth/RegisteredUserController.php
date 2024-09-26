@@ -37,9 +37,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user_role = Role::query()->where('name', 'user')->first()->id;
-
-        // dd($user_role);
+        $user_role = Role::query()->where('name' , 'user')->first()->id;
 
         $user = User::create([
             'name' => $request->name,
@@ -47,6 +45,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'role_id' => $user_role,
         ]);
+
 
         event(new Registered($user));
 
