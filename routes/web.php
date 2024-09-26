@@ -39,6 +39,7 @@ Route::middleware(['auth',AdminMiddleware::class])->group(function () {
     }) ->name('admin.dashboard');
 
     Route::controller(RestaurantController::class)->group(function () {
-       Route::get('admin/restaurants', 'index')->name('admin.restaurants.index');
+       Route::get('admin/restaurant', 'index')->name('admin.restaurant.index');
+       Route::get('admin/restaurant/create', 'create')->name('admin.restaurant.create');
     });
 });
