@@ -38,7 +38,7 @@ Route::middleware(['auth',AdminMiddleware::class])->group(function () {
         return view('admin.dashboard');
     }) ->name('admin.dashboard');
 
-    Route::Controller(RestaurantController::class)->group(function () {
+    Route::controller(RestaurantController::class)->group(function () {
        Route::get('admin/restaurants', 'index')->name('admin.restaurants.index');
     });
 });

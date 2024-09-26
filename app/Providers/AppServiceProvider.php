@@ -25,3 +25,22 @@ class AppServiceProvider extends ServiceProvider
         Vite::prefetch(concurrency: 3);
     }
 }
+class RouteServiceProviders extends ServiceProvider
+{
+    public const HOME = '/home'; // Ensure this line exists
+
+    public function boot()
+    {
+        $this->configureRateLimiting();
+
+        $this->routes(function () {
+            Route::middleware('api')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/api.php'));
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/web.php'));
+        });
+    }
+}
